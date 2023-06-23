@@ -62,12 +62,13 @@
                         items="{
                             path: '/selections'
                         }">
+                        
                         <columns> 
                             <Column hAlign="Begin">
-                                <Text text="Input"  wrapping="false"/>
+                                <Text text="Input"  wrapping="true"/>
                             </Column>
                             <Column hAlign="Begin">
-                                <Text text="SFC"  wrapping="false"/>
+                                <Text text="SFC"  wrapping="true"/>
                             </Column>
                             <Column hAlign="Begin">
                                 <Text text="Material" />
