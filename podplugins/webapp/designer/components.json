@@ -1,12 +1,12 @@
 {
     "components" : [
         {
-           "id": "vendorViewPlugin",
+           "id": "sapdmcViewPlugin",
            "type": "VIEW_PLUGIN",
            "allowMultipleInstances": false,
-           "name": "vendor.ext.viewplugins.exampleViewPlugin",
-           "propertyEditor": "vendor.ext.viewplugins.exampleViewPlugin.builder.PropertyEditor",
-           "i18n": "vendor.ext.viewplugins.exampleViewPlugin.i18n.i18n",
+           "name": "sapdmc.ext.viewplugins.exampleViewPlugin",
+           "propertyEditor": "sapdmc.ext.viewplugins.exampleViewPlugin.builder.PropertyEditor",
+           "i18n": "sapdmc.ext.viewplugins.exampleViewPlugin.i18n.i18n",
            "productionProcessEnabled": true,
            "productionProcessTitle": "Example View Plugin",
            "supportedPodTypes": ["WORK_CENTER","OPERATION", "ORDER", "OTHER", "MONITOR"]

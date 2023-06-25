@@ -28,15 +28,15 @@ e.g. https://github.com/SAP-samples/digital-manufacturing-extension-samples.git
 
 - Step 11 - Click on podplugins folder to see the file tree inside internal
 
-- Step 12 - Replace "vendor" word in project to actual vendor name or a placeholder name value.
+- Step 12 - Replace "sapdmc" word in project to actual sapdmc name or a placeholder name value.
 
-Note: Vendor is a namespace qualifier, this ensures that artifacts duch as java classes amd the archives in which they are packaged are globally unique.
+Note: sapdmc is a namespace qualifier, this ensures that artifacts duch as java classes amd the archives in which they are packaged are globally unique.
 
 - Step 13 - Select Edit on the menu
 
 - Step 14 - In the drop down menu from Edit select Replace in Files
 
-- Step 15 - Replace "vendor" to your actual vendor name value or a place holder  
+- Step 15 - Replace "sapdmc" to your actual sapdmc name value or a place holder  
 e.g. sapdmc
 
 - Step 16 - Click on Replace All icon. It should replace occurrences in all files. Click OK
@@ -48,12 +48,12 @@ e.g. /projects/test7podplugin/podplugins/webapp/designer/components.json
 {
     "components" : [
         {
-           "id": "vendorViewPlugin",
+           "id": "sapdmcViewPlugin",
            "type": "VIEW_PLUGIN",
            "allowMultipleInstances": false,
-           "name": "vendor.ext.viewplugins.exampleViewPlugin",
-           "propertyEditor": "vendor.ext.viewplugins.exampleViewPlugin.builder.PropertyEditor",
-           "i18n": "vendor.ext.viewplugins.exampleViewPlugin.i18n.i18n",
+           "name": "sapdmc.ext.viewplugins.exampleViewPlugin",
+           "propertyEditor": "sapdmc.ext.viewplugins.exampleViewPlugin.builder.PropertyEditor",
+           "i18n": "sapdmc.ext.viewplugins.exampleViewPlugin.i18n.i18n",
            "productionProcessEnabled": true,
            "productionProcessTitle": "Example View Plugin",
            "supportedPodTypes": ["WORK_CENTER","OPERATION", "ORDER", "OTHER", "MONITOR"]
@@ -62,29 +62,27 @@ e.g. /projects/test7podplugin/podplugins/webapp/designer/components.json
 }
 ```
 
-- Step 17 - Open mta.yaml file and replace <DMC_HOST1> with the host name where POD is located  
+- Step 18 - Open mta.yaml file and replace <DMC_HOST1> with the host name where POD is located  
 e.g. dmc-az-cons-training.test.execution.eu20.dmc.cloud.sap
 
-- Step 18 - Right-click the mta.yaml file and choose Build MTA Project
+- Step 19 - Right-click the mta.yaml file and choose Build MTA Project
 
-- Step 19 - The mta_archives folder is created by the Build command
+- Step 20 - The mta_archives folder is created by the Build command
 
-- Step 20 - A mtar file inside mta_archives folder is created by the Build command  
+- Step 21 - A mtar file inside mta_archives folder is created by the Build command  
 e.g. ExampleViewPluginsMTA_0.0.1.mtar
 
-- Step 21 - The node_modules folder is created with all required dependencies
+- Step 22 - The node_modules folder is created with all required dependencies
 
-- Step 22 - Right-click on the generated mtar file and choose Deploy MTA Archive  
+- Step 23 - Right-click on the generated mtar file and choose Deploy MTA Archive  
 e.g. ExampleViewPluginsMTA_0.0.1.mtar
 
-- Step 23 - After deployment is done, your application should be available in your Cloud Foundry space 
+- Step 24 - After deployment is done, your application should be available in your Cloud Foundry space 
 
-- Step 24 - The deployment will generate a link for your live plugin: Application "sapdmc-viewplugin" started and available at "digital-manufacturing-cloud-internal-tenants-dmc-az-###########.######.eu20.hana.ondemand.com"
+- Step 25 - The deployment will generate a link for your live plugin: Application "sapdmc-viewplugin" started and available at "digital-manufacturing-cloud-internal-tenants-dmc-az-###########.######.eu20.hana.ondemand.com"
 
-- Step 25 - To access your application, go to your space in the SAP Cloud Platform cockpit and select Applications from the side menu  
+- Step 26 - To access your application, go to your space in the SAP Cloud Platform cockpit and select Applications from the side menu  
 e.g. Digital Manufacturing Cloud Internal Tenants/DMC-AZ-CONSULTING-TRAINING/DMC_DEV/sapdmc-viewplugin
-
-- Step 26 - 
 
 - Step 27 - Application will be available under the Application Routes as a link  
 e.g. https://digital-manufacturing-cloud-internal-tenants-dmc-az-con3d7b0ede.cfapps.eu20.hana.ondemand.com
@@ -116,12 +114,12 @@ i.e. View POD plugin ExampleViewPlugins
 - Step 39 - Select POD Plugin Type
 
 - Step 40 - Enter URL  
-i.e. https://digital-manufacturing-cloud-internal-tenants-dmc-az-con3d7b0ede.cfapps.eu20.hana.ondemand.com
+i.e. digital-manufacturing-cloud-internal-tenants-dmc-az-con287e144e.cfapps.eu20.hana.ondemand.com
 
 - Step 41 - Enter Namespace  
 i.e. sapdmc/ext/viewplugins
 
-Note: replace “vendor” for Namespace definition with vendor value you used to “find and replace all”
+Note: replace “sapdmc” for Namespace definition with sapdmc value you used to “find and replace all”
 in SAP Business Application Studio
 
 - Step 42 - Enter Path  
@@ -136,47 +134,32 @@ i.e. /podplugins
 - Step 46 - Create a copy of the POD  
 i.e. WC_POD_COPY
 
+- Step 47 - Search under Plugins  
+e.g. Example View Plugin
+
 - Step 47 - Select Activities
 
-- Step 48 - Drag and drop the Action Button from the Controls>Layout menu ################
+- Step 48 - Drag and drop "Example View Plugin" into the plugin panel on the right
 
-- Step 49 - Select Configuration by Right clicking the Action Button #############
+- Step 49 - Click Save
 
-- Step 50 - Enter Text  ##################
-i.e. Start/Complete
+- Step 50 - Click the Preview  button (eye glasses icon)
 
-- Step 51 - Select icon  ##############
-i.e. sap-icon://Action
+- Step 51 - Select PRINTER_A under resource
 
-- Step 52 - Click on Assign Applications #############
+- Step 52 - Select DMC_PRIN under Work center
 
-- Step 53 - Click on Add #############
+- Step 53 - Click on the SFC text box and click the Go button to populate Work List
 
-- Step 54 - Select the plugin from the Type Definition box
+- Step 54 - Select any FSC
 
-- Step 55 - Click Create
+- Step 55 - You will be back in the POD viewing your selction
 
-- Step 56 - Close prior window
+- Step 56 - Click on Example View Plugin
 
-- Step 57 - Click Save
+There should be information for the current operation in the work center.
 
-- Step 58 - Click the Preview  button (eye glasses icon)
-
-- Step 59 - Select PRINTER_A under resource
-
-- Step 60 - Select DMC_PRIN under Work center
-
-- Step 61 - Click on the SFC text box and clcik the Go button to populate Work List
-
-- Step 62 - Select any FSC
-
-- Step 63 - You will be back in the POD viewing your selction
-
-- Step 64 - Click on Example View Plugin
-
-
-
-(Optional) Step 65 - If you do not see any changes to the plugin after re-building and re-deploying it this may be do to the browser cache. Clearing it will solved this or adding the following code in your index.html  
+(Optional) Step 57 - If you do not see any changes to the plugin after re-building and re-deploying it this may be do to the browser cache. Clearing it will solved this or adding the following code in your index.html  
 ```
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
