@@ -8,7 +8,7 @@
            "propertyEditor": "sapdmc.ext.viewplugins.exampleViewPlugin.builder.PropertyEditor",
            "i18n": "sapdmc.ext.viewplugins.exampleViewPlugin.i18n.i18n",
            "productionProcessEnabled": true,
-           "productionProcessTitle": "Example View Plugin",
+           "productionProcessTitle": "sabdmc-viewplugin",
            "supportedPodTypes": ["WORK_CENTER","OPERATION", "ORDER", "OTHER", "MONITOR"]
         }
     ]

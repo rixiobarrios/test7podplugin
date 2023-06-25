@@ -15,6 +15,7 @@ sap.ui.define([
             var oData = this.getPropertyData();
             this.addSwitch(oPropertyFormContainer, "notificationsEnabled", oData);
             this.addSwitch(oPropertyFormContainer, "closeButtonVisible", oData);
+            
         },
 
         getDefaultPropertyData: function () {
