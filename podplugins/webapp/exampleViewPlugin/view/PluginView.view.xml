@@ -52,28 +52,32 @@
                             <Label id="selectionCount" text="{/selectionCount}" width="100%" />
                         </items>
                     </HBox>
-                    <HBox width="100%">
+                    <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
                         <items>
                             <Label id="inputLabel" text="{i18n>input}:" class="sapUiTinyMarginEnd"/>
                             <Label id="input" text="{/input}" width="100%" />
+                            <Text text="{input}"/>
                         </items>
                     </HBox>
-                    <HBox width="100%">
+                    <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
                         <items>
                             <Label id="sfcLabel" text="{i18n>sfc}:" class="sapUiTinyMarginEnd"/>
                             <Label id="sfc" text="{/sfc}" width="100%" />
+                            <Text text="{sfc}"/>
                         </items>
                     </HBox>
-                    <HBox width="100%">
+                    <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
                         <items>
                             <Label id="materialLabel" text="{i18n>material}:" class="sapUiTinyMarginEnd"/>
                             <Label id="material" text="{/material}" width="100%" />
+                            <Text text="{material}"/>
                         </items>
                     </HBox>
-                    <HBox width="100%">
+                    <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
                         <items>
                             <Label id="shopOrderLabel" text="{i18n>shopOrder}:" class="sapUiTinyMarginEnd"/>
-                            <Label id="shopOrder" text="{/shopOreder}" width="100%" />
+                            <Label id="shopOrder" text="{/shopOrder}" width="100%" />
+                            <Text text="{shopOrder}"/>
                         </items>
                     </HBox>
                     <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
@@ -141,37 +145,6 @@
                                 <cells>
                                     <Text text="{operation}"/>
                                     <Text text="{version}"/>
-                                </cells>
-                            </ColumnListItem>
-                        </items>
-                    </Table>
-                    <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
-                        <items>
-                            <Label id="customFieldsLabel" text="Custom Fields:" class="sapUiTinyMarginEnd"/>
-                        </items>
-                    </HBox>
-                     <Table
-                        id="customFieldsTable"
-                        backgroundDesign="Solid"
-                        inset="false"
-                        width="100%"
-                        visible="{= ${/podType} === 'WORK_CENTER'}"
-                        items="{
-                            path: '/materialCustomFields'
-                        }">
-                        <columns>
-                            <Column hAlign="Begin">
-                                <Text text="Field"/>
-                            </Column>
-                            <Column hAlign="Begin">
-                                <Text text="Value"/>
-                            </Column>
-                        </columns>
-                        <items>
-                            <ColumnListItem>
-                                <cells>
-                                    <Text text="{attribute}"/>
-                                    <Text text="{value}"/>
                                 </cells>
                             </ColumnListItem>
                         </items>
