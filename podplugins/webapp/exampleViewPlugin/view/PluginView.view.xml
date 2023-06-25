@@ -52,6 +52,36 @@
                             <Label id="selectionCount" text="{/selectionCount}" width="100%" />
                         </items>
                     </HBox>
+                    <HBox width="100%">
+                        <items>
+                            <Label id="inputLabel" text="{i18n>input}:" class="sapUiTinyMarginEnd"/>
+                            <Label id="input" text="{/input}" width="100%" />
+                        </items>
+                    </HBox>
+                    <HBox width="100%">
+                        <items>
+                            <Label id="sfcLabel" text="{i18n>sfc}:" class="sapUiTinyMarginEnd"/>
+                            <Label id="sfc" text="{/sfc}" width="100%" />
+                        </items>
+                    </HBox>
+                    <HBox width="100%">
+                        <items>
+                            <Label id="materialLabel" text="{i18n>material}:" class="sapUiTinyMarginEnd"/>
+                            <Label id="material" text="{/material}" width="100%" />
+                        </items>
+                    </HBox>
+                    <HBox width="100%">
+                        <items>
+                            <Label id="shopOrderLabel" text="{i18n>shopOrder}:" class="sapUiTinyMarginEnd"/>
+                            <Label id="shopOrder" text="{/shopOreder}" width="100%" />
+                        </items>
+                    </HBox>
+                    <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
+                        <items>
+                            <Label id="operationCountLabel" text="Operations:" class="sapUiTinyMarginEnd"/>
+                            <Label id="operationCount" text="{/operationCount}" width="100%" />
+                        </items>
+                    </HBox>                                                            
                     <!-- Start Here -->
                     <Table
                         id="selectionsTable"
@@ -88,12 +118,6 @@
                             </ColumnListItem>
                         </items>
                     </Table>
-                    <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
-                        <items>
-                            <Label id="operationCountLabel" text="Operations:" class="sapUiTinyMarginEnd"/>
-                            <Label id="operationCount" text="{/operationCount}" width="100%" />
-                        </items>
-                    </HBox>
                     <Table
                         id="operationsTable"
                         backgroundDesign="Solid"
@@ -153,12 +177,6 @@
                         </items>
                     </Table>
                     <!-- End Here -->
-                    <VBox width="100%" visible="{/notificationsEnabled}">
-                        <items>
-                            <Label id="notificationLabel" text="Notification Message:" class="sapUiTinyMarginEnd"/>
-                            <TextArea id="notificationText" value="{/notificationMessage}" growing="true" width="100%"/>
-                        </items>
-                    </VBox>
                 </items>
             </VBox>
         </content>
