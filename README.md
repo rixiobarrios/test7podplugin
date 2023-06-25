@@ -41,6 +41,27 @@ e.g. sapdmc
 
 - Step 16 - Click on Replace All icon. It should replace occurrences in all files. Click OK
 
+- Step 17 - Go to the root components.js file to determine which plugin (e.g. /exampleViewPlugin or /viewPluginTemplate) 
+e.g. /projects/test7podplugin/podplugins/webapp/designer/components.json  
+
+```
+{
+    "components" : [
+        {
+           "id": "vendorViewPlugin",
+           "type": "VIEW_PLUGIN",
+           "allowMultipleInstances": false,
+           "name": "vendor.ext.viewplugins.exampleViewPlugin",
+           "propertyEditor": "vendor.ext.viewplugins.exampleViewPlugin.builder.PropertyEditor",
+           "i18n": "vendor.ext.viewplugins.exampleViewPlugin.i18n.i18n",
+           "productionProcessEnabled": true,
+           "productionProcessTitle": "Example View Plugin",
+           "supportedPodTypes": ["WORK_CENTER","OPERATION", "ORDER", "OTHER", "MONITOR"]
+        }
+    ]
+}
+```
+
 - Step 17 - Open mta.yaml file and replace <DMC_HOST1> with the host name where POD is located  
 e.g. dmc-az-cons-training.test.execution.eu20.dmc.cloud.sap
 
