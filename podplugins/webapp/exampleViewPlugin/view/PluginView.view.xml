@@ -52,32 +52,44 @@
                             <Label id="selectionCount" text="{/selectionCount}" width="100%" />
                         </items>
                     </HBox>
-                    <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
+                    <HBox width="100%" items="{
+                            path: '/selections'
+                        }">
                         <items>
                             <Label id="inputLabel" text="{i18n>input}:" class="sapUiTinyMarginEnd"/>
                             <Label id="input" text="{/input}" width="100%" />
-                            <Text text="{input}"/>
+                            <!-- <Text text="{input}"/> -->
+                            <!-- <Text text="input"/> -->
                         </items>
                     </HBox>
-                    <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
+                    <HBox width="100%" items="{
+                            path: '/selections'
+                        }">
                         <items>
                             <Label id="sfcLabel" text="{i18n>sfc}:" class="sapUiTinyMarginEnd"/>
                             <Label id="sfc" text="{/sfc}" width="100%" />
-                            <Text text="{sfc}"/>
+                            <!-- <Text text="{sfc}"/> -->
+                            <!-- <Text text="sfc"/> -->
                         </items>
                     </HBox>
-                    <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
+                    <HBox width="100%" items="{
+                            path: '/selections'
+                        }">
                         <items>
                             <Label id="materialLabel" text="{i18n>material}:" class="sapUiTinyMarginEnd"/>
                             <Label id="material" text="{/material}" width="100%" />
-                            <Text text="{material}"/>
+                            <!-- <Text text="{material}"/> -->
+                            <!-- <Text text="material"/> -->
                         </items>
                     </HBox>
-                    <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
+                    <HBox width="100%" items="{
+                            path: '/selections'
+                        }">
                         <items>
                             <Label id="shopOrderLabel" text="{i18n>shopOrder}:" class="sapUiTinyMarginEnd"/>
                             <Label id="shopOrder" text="{/shopOrder}" width="100%" />
-                            <Text text="{shopOrder}"/>
+                            <!-- <Text text="{shopOrder}"/> -->
+                            <!-- <Text text="shopOrder"/> -->
                         </items>
                     </HBox>
                     <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
