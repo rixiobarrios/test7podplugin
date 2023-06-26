@@ -52,6 +52,7 @@
                             <Label id="selectionCount" text="{/selectionCount}" width="100%" />
                         </items>
                     </HBox>
+                    <!-- New start -->
                     <HBox width="100%" items="{
                             path: '/selections'
                         }">
@@ -92,13 +93,14 @@
                             <!-- <Text text="shopOrder"/> -->
                         </items>
                     </HBox>
+                    <!-- New end -->
                     <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
                         <items>
                             <Label id="operationCountLabel" text="Operations:" class="sapUiTinyMarginEnd"/>
                             <Label id="operationCount" text="{/operationCount}" width="100%" />
                         </items>
                     </HBox>                                                            
-                    <!-- Start Here -->
+                    <!-- Ends Here -->
                     <Table
                         id="selectionsTable"
                         backgroundDesign="Solid"
@@ -108,7 +110,6 @@
                         items="{
                             path: '/selections'
                         }">
-                        
                         <columns> 
                             <Column hAlign="Begin">
                                 <Text text="Input"  wrapping="true"/>
