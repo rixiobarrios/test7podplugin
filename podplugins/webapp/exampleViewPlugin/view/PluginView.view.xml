@@ -58,7 +58,8 @@
                         }">
                         <items>
                             <Label id="inputLabel" text="{i18n>input}:" class="sapUiTinyMarginEnd"/>
-                            <Label id="input" text="{/input}" width="100%" />
+                            <!-- <Label id="input" text="{/input}" width="100%" /> -->
+                            <Label id="input" text="{input}" width="100%" />
                             <!-- <Text text="{input}"/> -->
                             <!-- <Text text="input"/> -->
                         </items>
@@ -68,7 +69,8 @@
                         }">
                         <items>
                             <Label id="sfcLabel" text="{i18n>sfc}:" class="sapUiTinyMarginEnd"/>
-                            <Label id="sfc" text="{/sfc}" width="100%" />
+                            <!-- <Label id="sfc" text="{/sfc}" width="100%" /> -->
+                            <Label id="sfc" text="{sfc}" width="100%" />
                             <!-- <Text text="{sfc}"/> -->
                             <!-- <Text text="sfc"/> -->
                         </items>
@@ -78,7 +80,8 @@
                         }">
                         <items>
                             <Label id="materialLabel" text="{i18n>material}:" class="sapUiTinyMarginEnd"/>
-                            <Label id="material" text="{/material}" width="100%" />
+                            <!-- <Label id="material" text="{/material}" width="100%" /> -->
+                            <Label id="material" text="{material}" width="100%" />
                             <!-- <Text text="{material}"/> -->
                             <!-- <Text text="material"/> -->
                         </items>
@@ -88,7 +91,8 @@
                         }">
                         <items>
                             <Label id="shopOrderLabel" text="{i18n>shopOrder}:" class="sapUiTinyMarginEnd"/>
-                            <Label id="shopOrder" text="{/shopOrder}" width="100%" />
+                            <!-- <Label id="shopOrder" text="{/shopOrder}" width="100%" /> -->
+                            <Label id="shopOrder" text="{shopOrder}" width="100%" />
                             <!-- <Text text="{shopOrder}"/> -->
                             <!-- <Text text="shopOrder"/> -->
                         </items>
@@ -101,40 +105,6 @@
                         </items>
                     </HBox>                                                            
                     <!-- Ends Here -->
-                    <Table
-                        id="selectionsTable"
-                        backgroundDesign="Solid"
-                        inset="false"
-                        width="100%"
-                        mode="SingleSelectMaster"
-                        items="{
-                            path: '/selections'
-                        }">
-                        <columns> 
-                            <Column hAlign="Begin">
-                                <Text text="Input"  wrapping="true"/>
-                            </Column>
-                            <Column hAlign="Begin">
-                                <Text text="SFC"  wrapping="true"/>
-                            </Column>
-                            <Column hAlign="Begin">
-                                <Text text="Material" />
-                            </Column>
-                            <Column hAlign="Begin">
-                                <Text text="Shop Order" />
-                            </Column>
-                        </columns>
-                        <items>
-                            <ColumnListItem>
-                                <cells>
-                                    <Text text="{input}"/>
-                                    <Text text="{sfc}"/>
-                                    <Text text="{material}"/>
-                                    <Text text="{shopOrder}"/>
-                                </cells>
-                            </ColumnListItem>
-                        </items>
-                    </Table>
                     <Table
                         id="operationsTable"
                         backgroundDesign="Solid"
