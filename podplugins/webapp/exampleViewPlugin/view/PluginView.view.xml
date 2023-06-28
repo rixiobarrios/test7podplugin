@@ -8,6 +8,7 @@
     <Panel id="podModelPluginPanel" width="100%" height="100%" expandable="false" expanded="true" accessibleRole="Region" backgroundDesign="Transparent">
         <headerToolbar>
             <Toolbar height="3rem">
+                <!-- <Button id="backButton" icon="sap-icon://nav-back" press="onBackPress"/> -->
                 <Title text="{i18n>title}"/>
                 <ToolbarSpacer/>
                 <Button id="closeButton" icon="sap-icon://decline" press="onClosePress"/>
@@ -15,125 +16,95 @@
         </headerToolbar>
         <content>
             <VBox id="podModelPluginPanelContent" width="100%" height="100%">
-                <items>
-                    <HBox width="100%">
-                        <items>
-                            <Label id="podTypeLabel" text="{i18n>podType}:" class="sapUiTinyMarginEnd"/>
-                            <Label id="podType" text="{/podType}" width="100%" />
-                        </items>
-                    </HBox>
-                    <HBox width="100%">
-                        <items>
-                            <Label id="inputTypeLabel" text="{i18n>inputType}:" class="sapUiTinyMarginEnd"/>
-                            <Label id="inputType" text="{/inputType}" width="100%" />
-                        </items>
-                    </HBox>
-                    <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
-                        <items>
-                            <Label id="workCenterLabel" text="{i18n>workCenter}:" class="sapUiTinyMarginEnd"/>
-                            <Label id="workCenter" text="{/workCenter}" width="100%" />
-                        </items>
-                    </HBox>
-                    <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
-                        <items>
-                            <Label id="operationLabel" text="{i18n>operation}:" class="sapUiTinyMarginEnd"/>
-                            <Label id="operation" text="{/operation}" width="100%" />
-                        </items>
-                    </HBox>
-                    <HBox width="100%">
-                        <items>
-                            <Label id="resourceLabel" text="{i18n>resource}:" class="sapUiTinyMarginEnd"/>
-                            <Label id="resource" text="{/resource}" width="100%" />
-                        </items>
-                    </HBox>
-                    <HBox width="100%">
-                        <items>
-                            <Label id="selectionCountTypeLabel" text="{i18n>selectionCount}:" class="sapUiTinyMarginEnd"/>
-                            <Label id="selectionCount" text="{/selectionCount}" width="100%" />
-                        </items>
-                    </HBox>
-                    <!-- New start -->
-                    <HBox width="100%" items="{
-                            path: '/selections'
-                        }">
-                        <items>
-                            <Label id="inputLabel" text="{i18n>input}:" class="sapUiTinyMarginEnd"/>
-                            <!-- <Label id="input" text="{/input}" width="100%" /> -->
-                            <Label id="input" text="{input}" width="100%" />
-                            <!-- <Text text="{input}"/> -->
-                            <!-- <Text text="input"/> -->
-                        </items>
-                    </HBox>
-                    <HBox width="100%" items="{
-                            path: '/selections'
-                        }">
-                        <items>
-                            <Label id="sfcLabel" text="{i18n>sfc}:" class="sapUiTinyMarginEnd"/>
-                            <!-- <Label id="sfc" text="{/sfc}" width="100%" /> -->
-                            <Label id="sfc" text="{sfc}" width="100%" />
-                            <!-- <Text text="{sfc}"/> -->
-                            <!-- <Text text="sfc"/> -->
-                        </items>
-                    </HBox>
-                    <HBox width="100%" items="{
-                            path: '/selections'
-                        }">
-                        <items>
-                            <Label id="materialLabel" text="{i18n>material}:" class="sapUiTinyMarginEnd"/>
-                            <!-- <Label id="material" text="{/material}" width="100%" /> -->
-                            <Label id="material" text="{material}" width="100%" />
-                            <!-- <Text text="{material}"/> -->
-                            <!-- <Text text="material"/> -->
-                        </items>
-                    </HBox>
-                    <HBox width="100%" items="{
-                            path: '/selections'
-                        }">
-                        <items>
-                            <Label id="shopOrderLabel" text="{i18n>shopOrder}:" class="sapUiTinyMarginEnd"/>
-                            <!-- <Label id="shopOrder" text="{/shopOrder}" width="100%" /> -->
-                            <Label id="shopOrder" text="{shopOrder}" width="100%" />
-                            <!-- <Text text="{shopOrder}"/> -->
-                            <!-- <Text text="shopOrder"/> -->
-                        </items>
-                    </HBox>
-                    <!-- New end -->
-                    <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
-                        <items>
-                            <Label id="operationCountLabel" text="Operations:" class="sapUiTinyMarginEnd"/>
-                            <Label id="operationCount" text="{/operationCount}" width="100%" />
-                        </items>
-                    </HBox>                                                            
-                    <!-- Ends Here -->
-                    <Table
-                        id="operationsTable"
-                        backgroundDesign="Solid"
-                        inset="false"
-                        width="100%"
-                        mode="SingleSelectMaster"
-                        visible="{= ${/podType} === 'WORK_CENTER'}"
+                <HBox width="100%" alignItems="Center">
+                    <items>
+                        <Text text="POD Type:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{/podType}"/>
+                    </items>  
+                </HBox>
+                <HBox width="100%">
+                    <items>
+                        <Text text="Input Type:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{/inputType}"/>
+                    </items>
+                </HBox>
+                <HBox width="100%">
+                    <items>
+                        <Text text="Work Center:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{/workCenter}"/>
+                    </items>
+                </HBox>
+                <HBox width="100%">
+                    <items>
+                        <Text text="Operation:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{/operation}"/>
+                    </items>
+                </HBox>
+                <HBox width="100%">
+                    <items>
+                        <Text text="Resource: " class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{/resource}"/>
+                    </items>
+                </HBox>
+                <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
+                    <items>
+                        <Text text="Selections: " class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{/selectionCount}"/>
+                    </items>
+                </HBox>
+                <HBox width="100%"
                         items="{
-                            path: '/operations'
+                            path: '/selections'
                         }">
-                        <columns>
-                            <Column hAlign="Begin">
-                                <Text text="operation"/>
-                            </Column>
-                            <Column hAlign="Begin">
-                                <Text text="Version"/>
-                            </Column>
-                        </columns>
-                        <items>
-                            <ColumnListItem>
-                                <cells>
-                                    <Text text="{operation}"/>
-                                    <Text text="{version}"/>
-                                </cells>
-                            </ColumnListItem>
-                        </items>
-                    </Table>
-                    <!-- End Here -->
-                </items>
+                    <items>
+                        <Text text="Input: " class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{input}"/>
+                    </items>
+                </HBox>
+                <HBox width="100%" items="{
+                            path: 'operations'
+                        }">
+                    <items>
+                        <Text text="SFC: " class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{sfc}"/>
+                    </items>
+                </HBox>
+                <HBox width="100%" items="{
+                            path: '/selections'
+                        }">
+                    <items>
+                        <Text text="Material: " class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{material}"/>
+                    </items>
+                </HBox>
+                <HBox width="100%" items="{
+                            path: '/selections'
+                        }">
+                    <items>
+                        <Text text="Order: " class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{shopOrder}"/>
+                    </items>
+                </HBox>
+                <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
+                    <items>
+                        <Text text="Operations:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{/operationCount}"/>
+                    </items>
+                </HBox>                
+                <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
+                    <items>
+                        <Text text="Operation:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{/operation}"/>
+                    </items>
+                </HBox>
+                <HBox width="100%" items="{
+                            path: 'operations'
+                        }">
+                    <items>
+                        <Text text="Version: " class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{version}"/>
+                    </items>
+                </HBox>                                                                                                                          
             </VBox>
         </content>
     </Panel>

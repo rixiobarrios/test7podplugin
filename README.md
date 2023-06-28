@@ -165,3 +165,8 @@ There should be information for the current operation in the work center.
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 ```
+Note: If you are still not seeing your changes in the POD:  
+a. Clear your browser's cache  
+b. Open a new incognito or InPrivate window in your browser  
+c. Remove your plugin from the POD, save your POD and add your plugin back, then save  
+d. Try Cache Buster [here](https://help.sap.com/docs/SAP_NETWEAVER_740/468a97775123488ab3345a0c48cadd8f/91f080966f4d1014b6dd926db0e91070.html?version=7.4.23)  
