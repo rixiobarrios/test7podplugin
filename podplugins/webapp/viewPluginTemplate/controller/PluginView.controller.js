@@ -69,6 +69,8 @@ sap.ui.define([
         configureNavigationButtons: function (oConfiguration) {
             if (!this.isPopup() && !this.isDefaultPlugin()) {
                 this.byId("closeButton").setVisible(oConfiguration.closeButtonVisible);
+                // Add back button
+                this.byId("backButton").setVisible(oConfiguration.backButtonVisible);
             }
         } 
     });

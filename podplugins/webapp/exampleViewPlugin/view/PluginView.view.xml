@@ -8,15 +8,16 @@
     <Panel id="podModelPluginPanel" width="100%" height="100%" expandable="false" expanded="true" accessibleRole="Region" backgroundDesign="Transparent">
         <headerToolbar>
             <Toolbar height="3rem">
-                <!-- <Button id="backButton" icon="sap-icon://nav-back" press="onBackPress"/> -->
+                <!-- add back button -->
+                <Button id="backButton" icon="sap-icon://nav-back" press="onBackPress"/>
                 <Title text="{i18n>title}"/>
                 <ToolbarSpacer/>
                 <Button id="closeButton" icon="sap-icon://decline" press="onClosePress"/>
             </Toolbar>
         </headerToolbar>
         <content>
-            <VBox id="podModelPluginPanelContent" width="100%" height="100%">
-                <HBox width="100%" alignItems="Center">
+            <VBox id="podModelPluginPanelContent" width="100%" height="100%" alignItems="Center">
+                <HBox width="100%">
                     <items>
                         <Text text="POD Type:" class="textFontSize" textAlign="Initial" width="100%"/>
                         <Text text="{/podType}"/>
@@ -52,36 +53,37 @@
                         <Text text="{/selectionCount}"/>
                     </items>
                 </HBox>
+                <HBox width="100%" items="{
+                            path: '/selections'
+                        }">
+                    <items>
+                        <Text text="Input:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{input}"/>
+                    </items>
+                </HBox>
+                <HBox width="100%" items="{
+                            path: '/selections'
+                        }">
+                    <items>
+                        <Text text="SFC:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{sfc}"/>
+                    </items>
+                </HBox>
+                <HBox width="100%" 
+                        items="{
+                            path: '/selections'
+                        }">
+                    <items>
+                        <Text text="Material:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{material}"/>
+                    </items>
+                </HBox>                                                 
                 <HBox width="100%"
                         items="{
                             path: '/selections'
                         }">
                     <items>
-                        <Text text="Input: " class="textFontSize" textAlign="Initial" width="100%"/>
-                        <Text text="{input}"/>
-                    </items>
-                </HBox>
-                <HBox width="100%" items="{
-                            path: 'operations'
-                        }">
-                    <items>
-                        <Text text="SFC: " class="textFontSize" textAlign="Initial" width="100%"/>
-                        <Text text="{sfc}"/>
-                    </items>
-                </HBox>
-                <HBox width="100%" items="{
-                            path: '/selections'
-                        }">
-                    <items>
-                        <Text text="Material: " class="textFontSize" textAlign="Initial" width="100%"/>
-                        <Text text="{material}"/>
-                    </items>
-                </HBox>
-                <HBox width="100%" items="{
-                            path: '/selections'
-                        }">
-                    <items>
-                        <Text text="Order: " class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="Order:" class="textFontSize" textAlign="Initial" width="100%"/>
                         <Text text="{shopOrder}"/>
                     </items>
                 </HBox>
@@ -97,14 +99,16 @@
                         <Text text="{/operation}"/>
                     </items>
                 </HBox>
-                <HBox width="100%" items="{
-                            path: 'operations'
+                <HBox width="100%"  
+                        visible="{= ${/podType} === 'WORK_CENTER'}"
+                        items="{
+                            path: '/operations'
                         }">
                     <items>
-                        <Text text="Version: " class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="Version1: " class="textFontSize" textAlign="Initial" width="100%"/>
                         <Text text="{version}"/>
                     </items>
-                </HBox>                                                                                                                          
+                </HBox>                                                                                                                                                                                                                                                                                                                                         
             </VBox>
         </content>
     </Panel>

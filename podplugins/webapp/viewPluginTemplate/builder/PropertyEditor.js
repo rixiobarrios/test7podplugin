@@ -1,3 +1,8 @@
+.
+
+
+
+
 sap.ui.define([
     "sap/dm/dme/podfoundation/control/PropertyEditor"
 ], function (PropertyEditor) {
@@ -14,11 +19,15 @@ sap.ui.define([
         addPropertyEditorContent: function (oPropertyFormContainer) {
             var oData = this.getPropertyData();
             this.addSwitch(oPropertyFormContainer, "closeButtonVisible", oData);
+            // Add back button
+            this.addSwitch(oPropertyFormContainer, "backButtonVisible", oData);
         },
 
         getDefaultPropertyData: function () {
             var oData = {
-                "closeButtonVisible": false
+                "closeButtonVisible": false,
+                // Add back button
+                "backButtonVisible": false
             };
 
             return oData;
