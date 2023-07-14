@@ -166,7 +166,7 @@ sap.ui.define([
             }
             // add material custom fields to model
             this.addMaterialCustomFields(oPodController.getUserPlant(), sMaterial);
-            //oLogger.info("oModel: " + JSON.stringify(oModelData));
+            oLogger.info("oModel: " + JSON.stringify(oModelData));
             var oModel = new JSONModel(oModelData);
 
             oView.setModel(oModel);
@@ -257,8 +257,6 @@ sap.ui.define([
         configureNavigationButtons: function (oConfiguration) {
             if (!this.isPopup() && !this.isDefaultPlugin()) {
                 this.byId("closeButton").setVisible(oConfiguration.closeButtonVisible);
-                // add back button
-                // this.byId("backButton").setVisible(oConfiguration.backButtonVisible);
             }
         } 
     });

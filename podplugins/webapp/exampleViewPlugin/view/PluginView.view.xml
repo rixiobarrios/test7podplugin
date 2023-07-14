@@ -16,7 +16,8 @@
             </Toolbar>
         </headerToolbar>
         <content>
-            <VBox id="podModelPluginPanelContent" width="100%" height="100%" alignItems="Center">
+            <VBox id="podModelPluginPanelContent" width="100%" height="100%" renderType="Bare" class="sapUiNoContentPadding">
+                <items>
                 <HBox width="100%">
                     <items>
                         <Text text="POD Type:" class="textFontSize" textAlign="Initial" width="100%"/>
@@ -47,6 +48,14 @@
                         <Text text="{/resource}"/>
                     </items>
                 </HBox>
+                <HBox width="100%" items="{
+                            path: '/selections'
+                        }">
+                    <items>
+                        <Text text="Quantity:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{/quantity}"/>
+                    </items>
+                </HBox>                                    
                 <HBox width="100%" visible="{= ${/podType} === 'WORK_CENTER'}">
                     <items>
                         <Text text="Selections: " class="textFontSize" textAlign="Initial" width="100%"/>
@@ -77,7 +86,13 @@
                         <Text text="Material:" class="textFontSize" textAlign="Initial" width="100%"/>
                         <Text text="{material}"/>
                     </items>
-                </HBox>                                                 
+                </HBox> 
+                <HBox width="100%">
+                    <items>
+                        <Text text="Material Version:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{/materialVersion}"/>
+                    </items>
+                </HBox>                                                                                   
                 <HBox width="100%"
                         items="{
                             path: '/selections'
@@ -105,10 +120,62 @@
                             path: '/operations'
                         }">
                     <items>
-                        <Text text="Version1: " class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="Version: " class="textFontSize" textAlign="Initial" width="100%"/>
                         <Text text="{version}"/>
                     </items>
-                </HBox>                                                                                                                                                                                                                                                                                                                                         
+                </HBox>
+                <HBox width="100%"
+                        items="{
+                            path: '/selections'
+                        }">
+                    <items>
+                        <Text text="Routing0:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{/routing}"/>
+                    </items>
+                </HBox>
+                <HBox width="100%"
+                        items="{
+                            path: '/selections'
+                        }">
+                    <items>
+                        <Text text="Status0:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{/status}"/>
+                    </items>
+                </HBox>   
+                                <HBox width="100%"
+                        items="{
+                            path: '/operations'
+                        }">
+                    <items>
+                        <Text text="Routing1:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{/routing}"/>
+                    </items>
+                </HBox>
+                <HBox width="100%"
+                        items="{
+                            path: '/operations'
+                        }">
+                    <items>
+                        <Text text="Status1:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{/status}"/>
+                    </items>
+                </HBox>  
+                <HBox width="100%"
+                        items="{
+                            path: '/operations'
+                        }">
+                    <items>
+                        <Text text="Routing2:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{/routing}"/>
+                    </items>
+                </HBox>
+                <HBox width="100%">
+                    <items>
+                        <Text text="Status2:" class="textFontSize" textAlign="Initial" width="100%"/>
+                        <Text text="{status}"/>
+                    </items>
+                </HBox>                             
+                </items>                                                                                                                                                                                                                                                                                                                                        
             </VBox>
         </content>
     </Panel>
